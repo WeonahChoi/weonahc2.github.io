@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Narrative</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+
+  <body>
+    <!-- Main Title -->
+    <a href="#project_title" class="story-nav-title"
+      >A Decade of an Aging World: 2012–2022</a
+    >
+
+    <div id="project_title">
+      <h1
+        style="
+          position: absolute;
+          top: 140px;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 120px;
+          font-size: 36px;
+          text-align: center;
+          font-weight: 700;
+        "
+      >
+        A Decade of an Aging World: </br>2012-2022
+      </h1>
+    </div>
+
+    <div class="story-nav-links-placeholder"></div>
+    <div class="story-nav-links">
+      <a href="#viz1">Falling Births Aging World</a>
+      <span></span>
+      <a href="#viz2">More Than Just Growing Old</a>
+      <span></span>
+      <a href="#viz3">Aging and the Cost We Carry</a>
+    </div>
+
+    <div
+      class="narrative-block"
+      id="intro"
+      style="padding-top: 150px; position: relative"
+    >
+      <div class="main-description">
+        <div>
+          <!-- <h1 style="height: 120px">A Decade of an Aging World: 2012-2022</h1> -->
+
+          This narrative visualization is best viewed on desktop and includes
+          fully interactive charts. It uses data from the World Bank’s World
+          Development Indicators, available
+          <a
+            href="https://databank.worldbank.org/source/world-development-indicators"
+            target="_blank"
+            style="color: #1a73e8"
+            >here</a
+          >.<br /><br />
+
+          Around the world, people are living longer thanks to decades of
+          progress in public health and medicine. At the same time, declining
+          fertility rates mean that the share of older adults is growing faster
+          than any other age group. According to the World Health Organization
+          (WHO), a country is considered an
+          <strong>aging society</strong> when 7% or more of its population is
+          aged 65 or older, and an <strong>aged society</strong> when that share
+          exceeds 14%. The United Nations further defines a
+          <strong>super-aged society</strong> as one in which 20% or more of the
+          population is over 65. This visualization traces how countries have
+          moved through these demographic stages between 2012 and 2022. By
+          following these transitions, we aim to explore not only the pace of
+          global aging, but also what it means for how societies must prepare
+          for the decades ahead. For further reference, see the
+          <a
+            href="https://www.who.int/westernpacific/newsroom/commentaries/detail/preparing-for-population-ageing-in-the-western-pacific-region"
+            target="_blank"
+            style="color: #1a73e8"
+          >
+            WHO commentary</a
+          >
+          and the
+          <a
+            href="https://digitallibrary.un.org/record/3846855"
+            target="_blank"
+            style="color: #1a73e8"
+          >
+            UN World Population Ageing 2019 Highlights</a
+          >.
+        </div>
+      </div>
+    </div>
+    <!-- Page 1 -->
+    <div class="narrative-block" id="viz1">
+      <div class="main-description">
+        <h2>Falling Births, Aging World</h2>
+        <p>
+          <strong>The crude birth rate</strong> refers to the number of live
+          births per 1,000 people in a given year. It is calculated based on the
+          total population, without accounting for age structure or sex
+          distribution. <strong>The over-65 population</strong> refers to the
+          percentage of people aged 65 and older within the total population.
+          This indicator is commonly used by the WHO and the United Nations to
+          classify the levels of population aging across societies. Between 2012
+          and 2022, the global crude birth rate decreased significantly from
+          20.4 to 16.6 births per 1,000 people (−3.9). At the same time, the
+          percentage of the population aged 65 and older increased from 7.8% to
+          9.7% (+2.0).
+        </p>
+
+        <p>
+          This dual shift marks a pivotal demographic transformation: fewer
+          children are being born while more people are entering old age. These
+          opposing trends reshape the structure of societies, placing new
+          pressures on labor markets, healthcare systems, and economic growth.
+          Understanding this demographic turning point is essential for planning
+          sustainable futures.
+        </p>
+
+        <p style="font-size: 18px; color: #555; margin-bottom: 14px">
+          **Click the year toggle below to compare global birth rates and aging
+          populations between 2012 and 2022. The chart and summary table will
+          update accordingly.**<br />
+          **Once the chart is fully rendered, hovering over each line label
+          reveals details for the 10 countries with the most extreme values,
+          either highest or lowest, depending on the indicator.**
+        </p>
+      </div>
+
+      <div class="chart-section">
+        <div
+          class="narrative-controls"
+          style="display: flex; align-items: center; gap: 10px"
+        >
+          <p></p>
+          <div class="control-btn">
+            <button id="show2022_v1">2012 ⇒ Show 2022</button>
+            <div class="control-text">
+              Click to view the 10-year change (2012 to 2022)
+            </div>
+          </div>
+
+          <div class="control-btn">
+            <button id="reset2022_v1">⟲</button>
+            <div class="control-text">Click to go back to 2012</div>
+          </div>
+        </div>
+        <div id="container1">
+          <svg id="svg1" width="880" height="500"></svg>
+          <div id="table_placeholder1"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- viz2 -->
+
+    <div class="narrative-block" id="viz2">
+      <div class="main-description">
+        <h2>
+           More Than Just Growing Old
+        </h2>
+        <p>
+          According to multiple studies, increases in human longevity
+          significantly influence various economic indicators and are also
+          shaped by them. Overall, aging is not driven by a single factor, but
+          rather unfolds alongside interconnected shifts such as declining birth
+          rates, rising life expectancy, and increasing healthcare expenditures.
+          Each country responds differently to aging based on its economic
+          capacity and welfare infrastructure, and these contrasts are clearly
+          visible in this visualization. This allows us to move beyond the
+          simple recognition that elderly populations are growing, and instead
+          gain a multi-dimensional understanding of how aging impacts national
+          healthcare burdens, economic productivity, and household spending
+          patterns.
+        </p>
+
+        <p>
+          In terms of <strong>private and public health expenditures</strong>,
+          countries with higher levels of aging generally tend to spend more on
+          healthcare per capita, reflecting increased demand for medical
+          services. However, among some <strong>Super-aged societies</strong>,
+          both private and public healthcare spending have actually decreased
+          compared to a decade ago. Interestingly, there are countries in the
+          <strong>aging group</strong> where healthcare expenditures have
+          declined despite the advancement into older population stages.
+          Furthermore, in several aging countries,
+          <strong>out-of-pocket costs</strong> remain high, suggesting that even
+          as nations age, the financial burden of healthcare often continues to
+          fall on individuals.
+        </p>
+
+        <p>
+          These contrasting patterns underscore the need to evaluate not just
+          whether a population is aging, but how prepared each country is to
+          support that aging through public policy, healthcare investment, and
+          social safety nets. The same level of aging may lead to vastly
+          different outcomes depending on national infrastructure and
+          priorities.
+        </p>
+
+        <p style="font-size: 18px; color: #555; margin-bottom: 14px">
+          **Countries are categorized into <strong>Aging</strong>,
+          <strong>Aged</strong>, and <strong>Super-aged</strong> groups based on
+          the UN classification of population aging.**<br />
+          **Each country's position on the chart represents the proportion of
+          population aged 65 and over relative to its
+          <strong>Gross National Income (GNI)</strong>.**<br />
+          **The <strong>size of each circle</strong> visualizes the relative
+          magnitude of the selected indicator, such as
+          <em>crude birth rate</em>, <em>GDP per capita</em>, or
+          <em>healthcare expenditure</em>.**<br />
+          **Once the chart is fully rendered, hovering over each circle in the
+          scatterplot allows you to view each country's data based on the
+          selected indicator.**
+        </p>
+      </div>
+
+      <!--  -->
+      <div id="chart2svg"></div>
+
+      <div class="chart-section">
+        <div
+          class="narrative-controls"
+          style="display: flex; align-items: center; gap: 10px"
+        >
+          <p></p>
+          <div class="control-btn">
+            <button id="show2022_v2">2012 => Show 2022</button>
+            <div class="control-text">
+              Click to view the 10-year change (2012 to 2022)
+            </div>
+          </div>
+          
+          <div
+            id="radius-control"
+            class="control-btn"
+            style="position: relative"
+          >
+            <label for="radiusIndicator">Select Indicator Name:</label>
+            <select id="radiusIndicator">
+              <option value="default">Default: Number of Countries</option>
+              <option value="birth">Crude Birth Rate (per 1,000)</option>
+              <option value="healthExp">
+                Private Health Expenditure (US$/capita)
+              </option>
+              <option value="govHealthExp">
+                Public Health Expenditure (US$/capita)
+              </option>
+              <option value="gdp">GDP per Capita (US$)</option>
+              <option value="lifeExpectancy">Life Expectancy (years)</option>
+              <option value="oldRatio">Old-Age Dependency Ratio (%)</option>
+              <option value="oopPct">
+                Out-of-Pocket (% of Health Expenditure)
+              </option>
+              <option value="oopUSD">Out-of-Pocket (US$/capita)</option>
+            </select>
+            <div class="control-text">Select Indicator Name</div>
+          </div>
+        </div>
+        <div id="container2">
+          <svg id="svg2" width="800" height="500"></svg>
+          <div id="table_placeholder2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- viz3 -->
+
+    <div class="narrative-block" id="viz3">
+      <div class="narrative-section main-description">
+        <h2>Aging and the Cost We Carry</h2>
+        <p>
+          As populations around the world continue to age, both governments and
+          individuals are striving to adapt to the challenges posed by
+          demographic shifts. While many countries have introduced policies to
+          manage the demands of aging societies, individuals are still often
+          left to shoulder the burden of out-of-pocket medical expenses—a
+          reality that all humans eventually face.
+        </p>
+
+        <p>
+          This analysis examines how personal healthcare spending has changed
+          over the past decade in relation to a country’s level of aging.
+          Despite rising levels of aging in many nations, most countries—with
+          the exception of Switzerland and the United States—have maintained per
+          capita private healthcare spending below $2,000. This indicates a
+          global tendency to keep individual medical costs relatively low, even
+          as the demand for elderly care increases.
+        </p>
+
+        <p>
+          Aging is an inevitable part of the human condition, and its societal
+          impact is growing. While countries respond through public health
+          systems and policies, individuals continue to carry a significant
+          share of the burden. The last decade reveals divergent paths: some
+          nations have reduced the personal cost burden through expanded
+          coverage or subsidies, while others have seen stagnant or rising
+          out-of-pocket costs despite aging. This raises a critical question: as
+          life expectancy increases, who ultimately bears the cost of living
+          longer?
+        </p>
+
+        <p>
+          A sustainable future requires a more equitable distribution of
+          healthcare responsibilities between the state and the individual. This
+          visualization offers a window into how each country is navigating that
+          balance—and whether its citizens are protected or exposed as they age.
+        </p>
+
+        <p style="font-size: 18px; color: #555; margin-bottom: 14px">
+          **Click the year toggle below to explore changes in per capita
+          healthcare costs between 2012 and 2022.**
+          <br />
+
+          **Hover over each country circle to view detailed national data and
+          see how different countries approach personal healthcare financing.**
+        </p>
+      </div>
+
+      <div class="chart-section">
+        <div
+          class="narrative-controls"
+          style="display: flex; align-items: center; gap: 10px"
+        >
+          <p></p>
+          <div class="control-btn">
+            <button id="show2022_v3">2012 => Show 2022</button>
+            <div class="control-text">
+              Click to view the 10-year change (2012 to 2022)
+            </div>
+          </div>
+
+          <div class="control-btn">
+            <button id="reset2022_v3">⟲</button>
+            <div class="control-text">Click to go back to 2012</div>
+          </div>
+        </div>
+        <div id="container3">
+          <svg id="svg3" width="800" height="500"></svg>
+          <div id="table_placeholder3"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="colors.js"></script>
+    <script src="chart1_ex.js"></script>
+    <script src="chart2_ex.js"></script>
+    <script src="chart3_ex.js"></script>
+    <!-- <script src="chart4_ex.js"></script> -->
+    <script>
+      loadTableHTML("table1.html", "table_placeholder1");
+      loadTableHTML("table2.html", "table_placeholder2");
+      loadTableHTML("table3.html", "table_placeholder3");
+      createViz1();
+    </script>
+   
+  <script>
+  const links = document.querySelectorAll(".story-nav-links a, .story-nav-title");
+  const sections = ["project_title", "viz1", "viz2", "viz3"].map(id =>
+    document.getElementById(id)
+  );
+
+  function updateActiveLink() {
+    let currentId = "";
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 150 && rect.bottom >= 0) {
+        currentId = section.id;
+      }
+    });
+
+    links.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${currentId}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveLink);
+
+  // 
+  window.dispatchEvent(new Event("scroll"));
+</script>
+
+
+  </body>
+</html>
